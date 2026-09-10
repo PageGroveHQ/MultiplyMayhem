@@ -1,0 +1,2 @@
+{"name":"star-quest","private":true,"type":"module","scripts":{"test":"node --test tests/engine.test.js","start":"node server.js"}}
+
