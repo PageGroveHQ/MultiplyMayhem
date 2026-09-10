@@ -1,3 +1,11 @@
+# iPhone home-screen updates
+
+Keep the existing home-screen icon between builds. Use **Check for updates**, then **Update ready · apply** from a menu. Updates replace cached application files, not player storage. The app now watches updates already downloading at startup as well as newly discovered updates. Manifest identity, start URL, and player storage key remain unchanged.
+
+Deleting/re-adding the app is not the update path. Safari and the installed app can have separate local saves. Use Download player backup in the copy with progress, then Import backup in the installed copy. Protect device saves requests persistent storage where supported, but cannot preserve data after a user deletes the app or clears its data. Downloaded backups remain important.
+
+## Previous release
+
 # Current release: Hands-on learning, addition blitz, and offline saves
 
 - Addition blitz includes all 81 ordered 1–9 + 1–9 pairs and a 45-question carrying-only variant. Correct answers advance after a short celebration. Incorrect answers pause for a ten-frame and make-a-ten explanation. All timers and existing answer formats apply.
