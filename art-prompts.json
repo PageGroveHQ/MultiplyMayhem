@@ -1,0 +1,48 @@
+{
+  "mode": "built-in image_gen",
+  "assets": [
+    {
+      "name": "meadow",
+      "prompt": "Use case: stylized-concept. Asset type: Star Quest web multiplication game world card, landscape 3:2. Create crisp SNES 16-bit pixel art with hard square pixel edges and limited palette. Cheerful original cap-wearing jumping adventurer in teal overalls and orange cap, floating golden gems, grassy block platforms, pastel mountains. Big colorful readable forms, charming playful optimistic child-friendly scene. Full-bleed landscape, strong clear focal character. No text, no logos, no watermark.",
+      "status": "failed: output safety rejection category other",
+      "dimensions": null
+    },
+    {
+      "name": "cosmos",
+      "prompt": "Use case: stylized-concept. Asset type: Star Quest web multiplication game world card, landscape 3:2. Crisp 16-bit console pixel art, hard square pixel edges, limited palette. Friendly original white-blue robot with orange antenna jumping on lunar pixel platforms, colorful distant planets and a cute yellow star companion in a deep blue cosmic sky. Big colorful readable forms, charming playful optimistic scene. Full-bleed landscape, strong clear focal robot. No text, no logos, no watermark.",
+      "status": "saved",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "name": "skylands",
+      "prompt": "Use case: stylized-concept. Asset type: Star Quest web multiplication game world card, landscape 3:2. Crisp SNES 16-bit pixel art, hard square pixel edges, limited palette. Friendly original purple-haired sky ranger with goggles exploring colorful floating islands among clouds, a treasure chest and colorful glider. Big colorful readable forms, charming playful optimistic scene. Full-bleed landscape, strong clear focal character. No guns, no text, no logos, no watermark.",
+      "status": "saved",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "name": "avatar-heads",
+      "prompt": "Use case: stylized-concept. Asset type: recolorable character avatar sprite atlas for children's web game. EXACTLY THREE evenly sized square cells side by side in one wide 3:1 image. Each contains the SAME centered front-facing head-and-shoulders CHILD bust, same friendly pose, same head size, identical eye mouth body placement. Left short spiky hair, center curly hair, right shoulder-length hair. No accessories. Crisp blocky 16-bit pixel art, large charming eyes and smiling mouth. Flat solid PURE WHITE background, no shadows behind figures, no cell borders. Controlled replacement palette: ALL hair saturated blue midtones and dark BLUE shadows. ALL skin warm ORANGE shades. BOTH irises saturated GREEN. ALL shirt MAGENTA/PINK. Outline near-black. Only use these hues in their designated regions. All three busts exactly same scale in each square cell: hair top around 10 percent down, shirt bottom 92 percent down, eyes at 48 percent down. No text, no logos, no watermark. Wide 3:1 canvas.",
+      "status": "saved",
+      "dimensions": [
+        2172,
+        724
+      ]
+    },
+    {
+      "name": "accessories",
+      "prompt": "Use case: stylized-concept. Asset type: original pixel-art avatar accessory sprite atlas. EXACTLY THREE evenly spaced square cells side-by-side in wide 3:1 canvas. Genuinely transparent RGBA background, preserve actual alpha with empty pixels all around and inside openings. Left: round GOLD eyeglasses front view with empty transparent lens openings. Center: VIOLET headphones front view with empty transparent face opening. Right: TEAL baseball cap front view. Accessories ONLY, no heads, no faces, no hair, no bodies, no text, no logos, no cell borders. Crisp 16-bit pixel art, hard square edges and simple bold chunky forms with dark outlines. Each accessory horizontally centered in its equal square cell and entirely contained inside that cell with padding. Suitable for layering over child avatars.",
+      "status": "saved",
+      "dimensions": [
+        2172,
+        724
+      ]
+    }
+  ]
+}
+
