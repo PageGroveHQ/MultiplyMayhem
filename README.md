@@ -10,15 +10,15 @@ Hold the screen so your child can answer out loud. Swipe right or tap Got it for
 
 ## Solo and timed play
 
-Choose Parent-led for swipe/button grading, or Solo for automatic answer checking. Solo supports typing every answer, three unique multiple-choice answers per fact, or an alternating mix. Both modes show the same corrections and require Continue after feedback. Solo does not expose parent grading or undo controls.
+Choose Parent-led for swipe/button grading, or Solo for automatic answer checking. Solo supports typing every answer, three unique multiple-choice answers per fact, or an alternating mix. Both modes show the same corrections. Untimed rounds and nonfinal trial cards wait for Continue after feedback; the last trial answer ends the round immediately. Solo does not expose parent grading or undo controls.
 
-The optional five-minute challenge overrides mission length, includes every selected fact, and reshuffles another deck when exhausted. The clock runs continuously, including feedback, leave confirmation and background tabs. Expiry records a submitted answer even if Continue was not pressed, excludes unanswered cards, and saves the run once. Leaving without saving discards the run and stops its timer. The history and CSV identify mode, solo format and timed rounds. Existing untimed rounds remain readable as Parent-led.
+The optional five-minute challenge overrides mission length and shows each selected fact exactly once, with no retries or extra decks. It ends immediately on the final submitted answer or at five minutes, whichever comes first. The clock runs continuously, including feedback, leave confirmation and background tabs. Expiry records a submitted answer even if Continue was not pressed, excludes unanswered cards, and saves the run once. Leaving without saving discards the run and stops its timer. The history and CSV identify mode, solo format and timed rounds. Existing untimed rounds remain readable as Parent-led.
 
 ## Players and progress
 
 Create a nickname and customize a bust avatar: six hairstyles, six hair colors, five skin tones, four eye colors, six shirt colors, four patterns and four backdrops. The portrait studio offers visual hair previews, shuffle and reset. Two cosmetic mission backdrops are selectable: Cosmic Circuit and Skyland Scouts. The questions and difficulty are the same; the existing World traveler achievement recognizes trying both. Gear has been removed from the editor and rendering; old profiles still load safely. The reference robot accompanies each flash card, celebrates correct answers, and teaches missed facts using groups of energy tiles and running totals. Existing profiles can be customized without losing history.
 
-Eight achievements reward completed missions, practice, successful retries, stars, and exploration. The Progress page shows per-table coverage and first-try accuracy, individual mission details, and a CSV history export. Practice for me prioritizes the selected tables' latest missed facts, then unseen facts, then previously correct facts.
+Seventeen achievements reward completed missions, practice, successful retries, stars, and exploration. The Progress page shows per-table coverage and first-try accuracy, individual mission details, and a CSV history export. Practice for me prioritizes the selected tables' latest missed facts, then unseen facts, then previously correct facts.
 
 Only completed missions are saved. Reports keep first tries separate from retries. Each run has an ID to prevent duplicate saves. Players remain independent; switching players does not merge histories. Storage failure shows a visible warning and permits session-only play. Malformed existing saves are left untouched.
 
@@ -41,5 +41,16 @@ Push this folder to the main branch of your repository. In Settings → Pages, s
 Game rules are in dist/engine.js, undo and retry scheduling in dist/session.js, local saves/reports/achievements in dist/progress.js, avatar rendering in dist/avatar.js, interaction in dist/app.js, and styling in dist/style.css, dist/studio.css and dist/modes.css. Avatar sheets use runtime palette replacement; recoloring preserves alpha and neutral highlights. The robot reference is the user-supplied bot_sprite_sheet_-fullview.jpg. Artwork was generated with built-in ImageGen; exact new prompts are in art-prompts-v3.json and prior prompts in art-prompts.json. To expand past 9, update the factor limit, selectable table controls, reporting validation, and large repeated-addition explanations together. Google Fonts is optional; system fonts work without it.
 Release 3 cutout backgrounds were cleaned in code with explicit user permission, inspected on dark and light backgrounds, and saved with real PNG alpha. The runtime does not perform background removal.
 
+
+
+## Flight reports and records
+
+Each round includes accuracy, correct out of the set, time used, unanswered facts, strong tables and missed-fact explanations with practice links. Unanswered facts are excluded from accuracy. Completion records compare capped trials with the same tables, parent/solo mode, solo format and practice ordering. A faster time is a completion record even with mistakes; accuracy is displayed alongside it and perfect accuracy has a separate achievement. Earlier unlimited timed rounds remain in history but cannot become capped-trial records. Trials do not offer undo.
+
+## Original audio and space numerals
+
+Enable Music at the top of the game to hear the original 32-second loop. Sound effects default on and cover launch, correct answers, gentle correction, the final ten seconds, timeout and set completion. Both controls save locally. Hidden tabs suspend audio while the clock continues. If the browser prevents playback, gameplay continues. WAV files and reuse details are in dist/audio; scripts/compose-audio.mjs reproduces them without external samples or services.
+
+Numerals use a locally bundled Orbitron font from https://github.com/google/fonts/tree/main/ofl/orbitron under the included SIL Open Font License (dist/fonts/OFL.txt).
 
 

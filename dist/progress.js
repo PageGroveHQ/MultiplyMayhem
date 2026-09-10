@@ -1,3 +1,4 @@
+import {isFinishedTrial,bestTrial,analyzeRun} from './analysis.js';
 export const STORAGE_KEY='star-quest.players.v1';
 export const DEFAULT_AVATAR={hair:0,hairColor:'#54351f',skin:'#e9ad79',eyes:'#497eb8',shirt:'#795bce',style:'plain',accessory:'none',backdrop:'#243c60'};
 export const WORLDS=[
@@ -32,6 +33,15 @@ export const BADGES=[
  {id:'worlds',icon:'◇',title:'World traveler',description:'Finish a mission with each of the two backdrops.',goal:2,value:(s,runs)=>new Set(runs.map(r=>r.world)).size},
  {id:'hundred',icon:'✧',title:'Galaxy of discoveries',description:'Explore all 100 different facts.',goal:100,value:s=>s.latest.size},
  {id:'stars',icon:'✺',title:'Star collector',description:'Collect 100 correct-answer stars.',goal:100,value:s=>s.correct},
+ {id:'solo-typing',icon:'⌨',title:'Solo pilot',description:'Finish a solo typing mission with at least one answer.',goal:1,value:(s,r)=>r.filter(x=>x.mode==='solo'&&x.format==='typing'&&x.answers.length).length},
+ {id:'solo-choice',icon:'③',title:'Signal finder',description:'Finish a multiple-choice mission with at least one answer.',goal:1,value:(s,r)=>r.filter(x=>x.mode==='solo'&&x.format==='choice'&&x.answers.length).length},
+ {id:'solo-mixed',icon:'⇄',title:'Switch expert',description:'Finish a mixed solo mission with at least two answers.',goal:1,value:(s,r)=>r.filter(x=>x.mode==='solo'&&x.format==='mixed'&&x.answers.length>=2).length},
+ {id:'crew',icon:'⊕',title:'Flight crew',description:'Complete a mission together in Parent-led mode.',goal:1,value:(s,r)=>r.filter(x=>x.mode!=='solo'&&x.answers.length).length},
+ {id:'trial-first',icon:'◷',title:'Launch window',description:'Finish a capped time trial with at least one answer.',goal:1,value:(s,r)=>r.filter(x=>x.timed&&x.trialVersion===2&&x.answers.length).length},
+ {id:'trial-clear',icon:'⚑',title:'Ahead of the clock',description:'Answer every selected fact before the time limit.',goal:1,value:(s,r)=>r.filter(isFinishedTrial).length},
+ {id:'trial-perfect',icon:'✵',title:'Precision pilot',description:'Finish a time trial with every answer correct.',goal:1,value:(s,r)=>r.filter(x=>isFinishedTrial(x)&&analyzeRun(x).accuracy===100).length},
+ {id:'trial-hundred',icon:'▦',title:'Full galaxy flight',description:'Complete all 100 facts in one time trial.',goal:1,value:(s,r)=>r.filter(x=>isFinishedTrial(x)&&analyzeRun(x).total===100).length},
+ {id:'trial-record',icon:'↗',title:'Personal best',description:'Beat your previous completion time for the same trial settings.',goal:1,value:(s,r)=>r.filter((x,i)=>{const best=bestTrial(r.slice(0,i),x);return isFinishedTrial(x)&&best&&x.elapsedMs<best.elapsedMs;}).length},
 ];
 export function earnedBadges(runs){const s=summarize(runs);return BADGES.filter(b=>b.value(s,runs)>=b.goal).map(b=>b.id);}
 export function recordRun(player,run){if(player.runs.some(r=>r.id===run.id))return [];const before=new Set(earnedBadges(player.runs));player.runs.push(run);return earnedBadges(player.runs).filter(id=>!before.has(id));}
