@@ -1,8 +1,8 @@
 {
   "id": "./",
-  "name": "Star Quest: Multiply Mayhem",
+  "name": "Star Quest: Math Adventures",
   "short_name": "Star Quest",
-  "description": "A multiplication adventure with your robot buddy.",
+  "description": "Multiplication, addition and subtraction adventures with Nova.",
   "lang": "en",
   "start_url": "./",
   "scope": "./",

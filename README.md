@@ -1,3 +1,15 @@
+# Current release: Math Adventures and the Starway
+
+The entry screen is now an extensible math hub: multiplication, addition, and subtraction. Addition and subtraction each include two-digit and three-digit regrouping banks with 20 unique questions per bank (80 new questions). Three-digit subtraction includes borrowing through zeros; addition includes carrying through both ones and tens. Every incorrect answer has place-value explanations and a column layout.
+
+Defaults: Solo, three-option multiple choice, all available questions, five minutes. Every game and answer style supports untimed, one-, three-, and five-minute rounds, with 10, 20, or all questions. Trials stop when the selected set is answered or the deadline expires, whichever happens first. Records compare identical games, variants, question sets, durations, controllers, answer formats, and practice ordering. Older multiplication saves remain readable and full-set records remain comparable.
+
+Nova & the Lost Starway is a six-mission story, started with this release. Finish a set to restore one beacon; expired rounds still save learning progress but do not advance the chapter. After six beacons, missions become patrols. Older achievements and histories stay intact. The game registry automatically supplies discovery, practice, and variant achievements; timer lengths and story completion also have badges.
+
+The original menu composition plays on all menus once Music is enabled and the player interacts. Music/effects preferences remain local. Menu and gameplay tracks switch without overlapping; the finish fanfare returns to the menu theme.
+
+## Earlier release notes
+
 # Star Quest
 
 A solo or parent-led multiplication adventure with original SNES-inspired pixel artwork. No accounts, tracking, ads or subscriptions. Multiple local player profiles retain avatars, achievements, and completed mission histories in this browser using localStorage.

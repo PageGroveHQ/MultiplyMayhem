@@ -16,3 +16,8 @@ for(let i=0;i<music.length;i++)music[i]*=Math.min(1,i/220,(music.length-1-i)/220
 for(const [name,notes,length] of [['start',[60,64,67,72],.75],['correct',[76,81],.3],['learn',[67,72],.38],['finish',[72,67,64,60],1],['clear',[60,64,67,72,79],1.1]]){const out=track(length);notes.forEach((n,i)=>note(out,i*.12,.22,n,.2,'triangle'));save(name,out);}
 const tick=track(.09);note(tick,0,.075,84,.12,'sine');save('tick',tick);
 
+// Menu: an original slower, floating 8-bar motif (90 BPM), separate from flight music.
+const menu=track(64/3),menuChords=[[60,64,67],[57,60,64],[53,57,60],[55,59,62]];
+for(let bar=0;bar<8;bar++){const chord=menuChords[bar%4];for(let beat=0;beat<4;beat++){const at=(bar*4+beat)*2/3;note(menu,at,.58,chord[beat%3]+12,.065,'triangle');if(beat%2===0){note(menu,at,1.15,chord[0]-12,.095,'sine');note(menu,at,.8,chord[(beat+bar)%3]+24,.035,'triangle');}}}
+for(let i=0;i<menu.length;i++)menu[i]*=Math.min(1,i/220,(menu.length-1-i)/220);save('starway-menu',menu);
+

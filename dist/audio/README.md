@@ -2,6 +2,7 @@
 
 Original synthesized composition and effects created for this game. No third-party music, recordings, samples, or recognizable game melodies are used. These project-generated audio assets may be used, modified, and redistributed freely, including with this game; no attribution or payment is required.
 
+- starway-menu.wav: 21⅓-second menu loop, 90 BPM, played throughout player selection, customization, mission setup, reports and achievements.
 - starlight-loop.wav: 32-second looping space chiptune, 120 BPM.
 - start.wav: mission launch arpeggio.
 - correct.wav: correct-answer cue.
