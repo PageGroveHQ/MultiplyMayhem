@@ -1,6 +1,6 @@
 # Star Quest
 
-A parent-led multiplication adventure with original SNES-inspired pixel artwork. No accounts, tracking, ads, timers or subscriptions. Multiple local player profiles retain avatars, achievements, and completed mission histories in this browser using localStorage.
+A solo or parent-led multiplication adventure with original SNES-inspired pixel artwork. No accounts, tracking, ads or subscriptions. Multiple local player profiles retain avatars, achievements, and completed mission histories in this browser using localStorage.
 
 ## Play
 
@@ -8,9 +8,15 @@ Choose all tables, odds (1,3,5,7,9), evens (0,2,4,6,8), or any custom selection.
 
 Hold the screen so your child can answer out loud. Swipe right or tap Got it for a correct answer. Swipe left or tap Let's practice to see the answer, equal groups, and repeated addition. Desktop arrow keys work too. Feedback waits for the parent to continue. A missed original fact returns once after up to three intervening cards; a missed retry does not add further cards. Undo removes a mark or restores the previous card and its scheduled retry. Tilt is not included.
 
+## Solo and timed play
+
+Choose Parent-led for swipe/button grading, or Solo for automatic answer checking. Solo supports typing every answer, three unique multiple-choice answers per fact, or an alternating mix. Both modes show the same corrections and require Continue after feedback. Solo does not expose parent grading or undo controls.
+
+The optional five-minute challenge overrides mission length, includes every selected fact, and reshuffles another deck when exhausted. The clock runs continuously, including feedback, leave confirmation and background tabs. Expiry records a submitted answer even if Continue was not pressed, excludes unanswered cards, and saves the run once. Leaving without saving discards the run and stops its timer. The history and CSV identify mode, solo format and timed rounds. Existing untimed rounds remain readable as Parent-led.
+
 ## Players and progress
 
-Create a nickname and customize a bust avatar: six hairstyles, six hair colors, five skin tones, four eye colors, four accessory settings, six shirt colors, four patterns and four backdrops. The portrait studio offers visual hair previews, shuffle and reset. Two pixel-art worlds are selectable: Cosmic Circuit and Skyland Scouts. The reference robot accompanies each flash card, celebrates correct answers, and teaches missed facts using groups of energy tiles and running totals. Existing profiles can be customized without losing history.
+Create a nickname and customize a bust avatar: six hairstyles, six hair colors, five skin tones, four eye colors, six shirt colors, four patterns and four backdrops. The portrait studio offers visual hair previews, shuffle and reset. Two cosmetic mission backdrops are selectable: Cosmic Circuit and Skyland Scouts. The questions and difficulty are the same; the existing World traveler achievement recognizes trying both. Gear has been removed from the editor and rendering; old profiles still load safely. The reference robot accompanies each flash card, celebrates correct answers, and teaches missed facts using groups of energy tiles and running totals. Existing profiles can be customized without losing history.
 
 Eight achievements reward completed missions, practice, successful retries, stars, and exploration. The Progress page shows per-table coverage and first-try accuracy, individual mission details, and a CSV history export. Practice for me prioritizes the selected tables' latest missed facts, then unseen facts, then previously correct facts.
 
@@ -32,7 +38,8 @@ Push this folder to the main branch of your repository. In Settings → Pages, s
 
 ## Extending
 
-Game rules are in dist/engine.js, undo and retry scheduling in dist/session.js, local saves/reports/achievements in dist/progress.js, avatar rendering in dist/avatar.js, interaction in dist/app.js, and styling in dist/style.css and dist/studio.css. Avatar sheets use runtime palette replacement and accessory compositing; recoloring preserves alpha and neutral highlights. The robot reference is the user-supplied bot_sprite_sheet_-fullview.jpg. Artwork was generated with built-in ImageGen; exact new prompts are in art-prompts-v3.json and prior prompts in art-prompts.json. To expand past 9, update the factor limit, selectable table controls, reporting validation, and large repeated-addition explanations together. Google Fonts is optional; system fonts work without it.
+Game rules are in dist/engine.js, undo and retry scheduling in dist/session.js, local saves/reports/achievements in dist/progress.js, avatar rendering in dist/avatar.js, interaction in dist/app.js, and styling in dist/style.css, dist/studio.css and dist/modes.css. Avatar sheets use runtime palette replacement; recoloring preserves alpha and neutral highlights. The robot reference is the user-supplied bot_sprite_sheet_-fullview.jpg. Artwork was generated with built-in ImageGen; exact new prompts are in art-prompts-v3.json and prior prompts in art-prompts.json. To expand past 9, update the factor limit, selectable table controls, reporting validation, and large repeated-addition explanations together. Google Fonts is optional; system fonts work without it.
 Release 3 cutout backgrounds were cleaned in code with explicit user permission, inspected on dark and light backgrounds, and saved with real PNG alpha. The runtime does not perform background removal.
+
 
 

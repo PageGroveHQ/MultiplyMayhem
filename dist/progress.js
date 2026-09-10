@@ -29,7 +29,7 @@ export const BADGES=[
  {id:'comeback',icon:'↗',title:'Try-again hero',description:'Get a practice-again card correct.',goal:1,value:s=>s.comebacks},
  {id:'regular',icon:'★',title:'Quest keeper',description:'Complete 5 missions.',goal:5,value:s=>s.runs},
  {id:'tables',icon:'▦',title:'Table explorer',description:'Try a fact from each of the 10 tables.',goal:10,value:s=>s.tables.filter(t=>t.seen.size).length},
- {id:'worlds',icon:'◇',title:'World traveler',description:'Finish a mission in both worlds.',goal:2,value:(s,runs)=>new Set(runs.map(r=>r.world)).size},
+ {id:'worlds',icon:'◇',title:'World traveler',description:'Finish a mission with each of the two backdrops.',goal:2,value:(s,runs)=>new Set(runs.map(r=>r.world)).size},
  {id:'hundred',icon:'✧',title:'Galaxy of discoveries',description:'Explore all 100 different facts.',goal:100,value:s=>s.latest.size},
  {id:'stars',icon:'✺',title:'Star collector',description:'Collect 100 correct-answer stars.',goal:100,value:s=>s.correct},
 ];

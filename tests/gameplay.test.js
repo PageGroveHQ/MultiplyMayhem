@@ -1,0 +1,6 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';
+import {answerChoices,parseAnswer,answerStyle,remainingSeconds,clockLabel,runLabel} from '../dist/gameplay.js';
+test('every fact has three unique bounded choices with exactly one correct answer',()=>{for(let a=0;a<=9;a++)for(let b=0;b<=9;b++)for(const random of [()=>0,()=>.999999,Math.random]){const options=answerChoices(a,b,random);assert.equal(options.length,3);assert.equal(new Set(options).size,3);assert.equal(options.filter(v=>v===a*b).length,1);assert.ok(options.every(v=>Number.isInteger(v)&&v>=0&&v<=81));}});
+test('typing accepts zero and rejects blanks, fractions and non-numeric input',()=>{for(const value of ['', ' ', '-1','1.5','82','1e1','<b>'])assert.equal(parseAnswer(value),null);assert.equal(parseAnswer('0'),0);assert.equal(parseAnswer(' 25 '),25);assert.equal(parseAnswer('81'),81);});
+test('clock uses elapsed real time and old histories default to parent-led',()=>{assert.equal(clockLabel(remainingSeconds(300000,0)),'5:00');assert.equal(remainingSeconds(300000,299999),1);assert.equal(remainingSeconds(300000,300001),0);assert.equal(answerStyle('mixed',0),'typing');assert.equal(answerStyle('mixed',1),'choice');assert.equal(runLabel({}),'Parent-led');assert.match(runLabel({mode:'solo',format:'choice',timed:true}),/Solo · Multiple choice · 5-minute challenge/);});
+

@@ -1,0 +1,16 @@
+/* Keep learning numerals distinct from the decorative pixel headings. */
+.tables .table,.equation,.choice-answers,.challenge-clock{font-family:Arial,Helvetica,sans-serif;font-variant-numeric:tabular-nums;font-weight:700}
+.tables .table{font-size:1.8rem}.tables .table small{font-family:inherit;font-weight:400;font-size:.75rem}
+.player-banner{display:flex;align-items:center;justify-content:space-between;overflow:hidden;border:1px solid #395475;border-radius:14px;background:#182e48;margin:22px 0 28px;gap:20px}
+.player-banner>div{padding:28px 34px}.player-banner p{font-size:1.6rem;font-weight:600;color:#e2f0ff;line-height:1.3;margin-top:12px}
+.player-banner img{display:block;width:46%;height:auto;aspect-ratio:3/2;object-fit:contain;image-rendering:pixelated}
+.backdrop-note{font-size:.85rem;color:#bdcee4;line-height:1.5;margin:14px 0 4px}
+.world-stage{aspect-ratio:auto}.world-stage>img{display:block;width:100%;height:auto;object-fit:contain}.world-caption{position:static;padding:18px;background:#1c3048}.world-caption h2{font-size:1.8rem}.world-caption p{font-size:.9rem}
+.mode-settings{display:grid;gap:18px;margin-top:24px;padding-top:20px;border-top:1px solid #39506c}.mode-settings .field{margin:0}.toggle input{flex-shrink:0}.field select:disabled{opacity:.65}
+.play-toolbar .challenge-clock{display:inline-block;color:#d2edff;background:#213a54;border:1px solid #547595;padding:8px 12px;border-radius:8px;white-space:nowrap;font-size:1.05rem}
+.solo-answer{margin:25px auto 0;max-width:580px;text-align:center}.solo-answer>p,.solo-answer>label{display:block;margin-bottom:12px;color:#d9e7f9;font-weight:600}
+.typing-row{display:flex;justify-content:center;gap:12px}.typing-row input{width:130px;min-width:0;border:2px solid #90caff;border-radius:10px;background:#f2f5ec;color:#172437;text-align:center;font:700 2rem Arial;padding:12px}.typing-row button{min-width:160px}
+.choice-answers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.answer-choice{font-size:2rem;padding:18px;background:#243d58;border:2px solid #91bcdf}.answer-choice:hover{background:#345578}
+#answer-error{font-size:.9rem;margin-top:10px;color:#ffd3ac}.solo-answer input:focus-visible,.answer-choice:focus-visible{outline:3px solid #ffe087;outline-offset:3px}
+@media(max-width:650px){.player-banner>div{display:none}.player-banner img{width:100%;height:auto}.player-banner{max-width:480px;margin-left:auto;margin-right:auto}.world-caption{padding:16px}.typing-row{gap:8px}.typing-row input{width:100px}.typing-row button{min-width:0;font-size:.95rem}.choice-answers{gap:9px}.answer-choice{font-size:1.8rem;padding:16px 8px}.play-toolbar{flex-wrap:wrap}.play-toolbar .challenge-clock{font-size:.95rem;padding:8px}.backdrop-note{font-size:.8rem}}
+

@@ -16,9 +16,6 @@ export function recolorPortrait(data,width,options){const a={...DEFAULT_AVATAR,.
 }
 export async function drawAvatar(canvas,options){const token={};renders.set(canvas,token);const a={...DEFAULT_AVATAR,...options},ctx=canvas.getContext('2d'),size=256;canvas.width=size;canvas.height=size;ctx.imageSmoothingEnabled=false;if(canvas.style)canvas.style.backgroundColor=/^#[a-f0-9]{6}$/i.test(a.backdrop)?a.backdrop:DEFAULT_AVATAR.backdrop;
  try{const hair=Math.max(0,Math.min(5,Math.floor(Number(a.hair)||0))),sprite=await load(hair<3?'./player-heads.png':'./player-heads-extra.png');if(renders.get(canvas)!==token)return;const cell=sprite.width/3;ctx.drawImage(sprite,(hair%3)*cell,0,cell,sprite.height,0,0,size,size);const image=ctx.getImageData(0,0,size,size);recolorPortrait(image.data,size,a);ctx.putImageData(image,0,0);
-  if(a.accessory!=='none'){const accessories=await load('./accessories.png');if(renders.get(canvas)!==token)return;const c=accessories.width/3;
-   const poses={glasses:[0,.23,.415,.54,.25,.04,.31,.91,.41],headphones:[1,.13,.06,.74,.70,.04,.1,.92,.72],cap:[2,.16,.04,.68,.41,.08,.18,.82,.58]},p=poses[a.accessory];if(p)ctx.drawImage(accessories,(p[0]+p[5])*c,p[6]*accessories.height,p[7]*c,p[8]*accessories.height,p[1]*size,p[2]*size,p[3]*size,p[4]*size);
-  }
  }catch{if(renders.get(canvas)!==token)return;ctx.clearRect(0,0,size,size);ctx.fillStyle='#c0defb';ctx.font='bold 16px system-ui';ctx.textAlign='center';ctx.fillText('Portrait loading unavailable',128,120);canvas.title='Could not load your portrait. Your customization and saved progress are safe. Refresh to try again.';}
 }
 
