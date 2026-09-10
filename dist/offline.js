@@ -1,0 +1,4 @@
+let registration=null,ready=false,waiting=false,notify=()=>{};
+export const offlineStatus=()=>({ready,waiting});
+export async function initOffline(onChange){notify=onChange;if(!globalThis.navigator?.serviceWorker)return;try{registration=await navigator.serviceWorker.register('./sw.js');const update=()=>{ready=!!registration.active;waiting=!!registration.waiting;notify();};update();registration.addEventListener('updatefound',()=>{const worker=registration.installing;worker?.addEventListener('statechange',update);});await navigator.serviceWorker.ready;update();}catch{ready=false;notify();}}
+export function applyOfflineUpdate(){if(!registration?.waiting)return;let reloaded=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(!reloaded){reloaded=true;location.reload();}});registration.waiting.postMessage({type:'ACTIVATE'});}

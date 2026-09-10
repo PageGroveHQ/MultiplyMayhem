@@ -1,3 +1,17 @@
+# Current release: Hands-on learning, addition blitz, and offline saves
+
+- Addition blitz includes all 81 ordered 1–9 + 1–9 pairs and a 45-question carrying-only variant. Correct answers advance after a short celebration. Incorrect answers pause for a ten-frame and make-a-ten explanation. All timers and existing answer formats apply.
+- Addition and subtraction offer interactive column math and place-value blocks. Learners enter digits and carries, tap digits to borrow, trade blocks, and remove blocks. Hints and corrected attempts count as practice in first-try reports; the completed solution is still celebrated.
+- Setup follows three steps (practice, answer style, length), with scenery and ordering under More options. Play again restores the previous settings.
+- The Starway map has six selectable stops, restored scenery states, and Nova dialogue. Sixteen additional cutouts from the user-provided sprite sheet decorate the app; sprites are cropped and blue-background-cleaned under the existing permission, not regenerated.
+- The parent dashboard summarizes seven skills, uses recent first tries, and requires at least eight recent attempts across four distinct questions before assigning a status. Each skill links to a filtered practice bank. New lesson formats and blitz achievements accompany the modes.
+- Offline support caches the app, art, local fonts, and music after the first successful online visit. The page shows Ready for offline play when installed. Updates wait for the player to apply them from a menu; active rounds are never reloaded automatically. Home-screen app identity is unchanged.
+- JSON backups export every local profile, avatar, story progress, and mission. Import previews the additions, validates the file, and merges missing IDs without overwriting local profiles or duplicate runs. Store backups outside the browser for safekeeping. Saves remain local and do not automatically sync.
+
+Maintenance: run `node scripts/build-offline.mjs` after changing assets/source, then `npm test`. The cache hash must match the published files.
+
+## Previous release
+
 # Current release: Math Adventures and the Starway
 
 The entry screen is now an extensible math hub: multiplication, addition, and subtraction. Addition and subtraction each include two-digit and three-digit regrouping banks with 20 unique questions per bank (80 new questions). Three-digit subtraction includes borrowing through zeros; addition includes carrying through both ones and tens. Every incorrect answer has place-value explanations and a column layout.
@@ -64,5 +78,4 @@ Each round includes accuracy, correct out of the set, time used, unanswered fact
 Enable Music at the top of the game to hear the original 32-second loop. Sound effects default on and cover launch, correct answers, gentle correction, the final ten seconds, timeout and set completion. Both controls save locally. Hidden tabs suspend audio while the clock continues. If the browser prevents playback, gameplay continues. WAV files and reuse details are in dist/audio; scripts/compose-audio.mjs reproduces them without external samples or services.
 
 Numerals use a locally bundled Orbitron font from https://github.com/google/fonts/tree/main/ofl/orbitron under the included SIL Open Font License (dist/fonts/OFL.txt).
-
 

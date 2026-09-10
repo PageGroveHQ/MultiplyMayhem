@@ -11,5 +11,4 @@ export function answerChoices(a,b,random=Math.random){
 }
 export function remainingSeconds(deadline,now=Date.now()){return Math.max(0,Math.ceil((deadline-now)/1000));}
 export function clockLabel(seconds){return `${Math.floor(seconds/60)}:${String(seconds%60).padStart(2,'0')}`;}
-export function runLabel(run){return `${run.mode==='solo'?'Solo · '+({typing:'Typing',choice:'Multiple choice',mixed:'Mixed'}[run.format]||'Typing'):'Parent-led'}${run.timed?' · '+((run.timeLimitMs||CHALLENGE_MS)/60000)+'-minute challenge':''}`;}
-
+export function runLabel(run){return `${run.mode==='solo'?'Solo · '+({typing:'Typing',choice:'Multiple choice',mixed:'Mixed',columns:'Column math',blocks:'Place-value blocks'}[run.format]||'Typing'):'Parent-led'}${run.timed?' · '+((run.timeLimitMs||CHALLENGE_MS)/60000)+'-minute challenge':''}`;}

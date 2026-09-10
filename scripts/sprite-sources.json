@@ -1,0 +1,22 @@
+{
+  "source": "User-provided bot_sprite_sheet_-fullview.jpg",
+  "method": "Cropped from the supplied sheet; connected blue background removed using the user-authorized cleanup workflow.",
+  "assets": [
+    "controller",
+    "cruiser",
+    "runner",
+    "jet",
+    "jumper",
+    "bigbot",
+    "orb",
+    "saucer",
+    "cheer",
+    "wave",
+    "scout",
+    "shield",
+    "crate",
+    "crates",
+    "energy",
+    "team"
+  ]
+}

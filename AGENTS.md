@@ -6,3 +6,5 @@
 - Preserve defaults: Solo, multiple choice, all questions, five-minute timer. All games must support untimed and 1-, 3-, 5-minute limits.
 - Use the established robot artwork and local audio; keep music and effects independently controllable.
 
+- After any source or asset change, regenerate `dist/sw.js` with `node scripts/build-offline.mjs` before tests and publication. Never auto-reload an active round to activate an update.
+- Preserve backup format and non-destructive merge behavior. Guided errors must not inflate first-try accuracy.
