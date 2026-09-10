@@ -13,4 +13,14 @@ test('create, customize, finish, reload and switch between independent players',
  again.run('act("choose:"+save.data.players[0].id);');assert.equal(again.run('player().runs.length'),1);
 });
 test('nickname markup is escaped and duplicate nicknames cannot overwrite profiles',()=>{let raw;const storage={getItem:()=>raw,setItem:(k,v)=>raw=v},h=harness(storage);h.run('act("new");editor.name="<img onerror=x>";savePlayer();');assert.doesNotMatch(h.html(),/<img onerror=x>/);h.run('act("new");editor.name="<img onerror=x>";savePlayer();');assert.match(h.html(),/already has a save slot/);assert.equal(JSON.parse(raw).players.length,1);});
+test('studio saves expanded choices, resets draft changes and leaves history intact',()=>{let raw;const storage={getItem:()=>raw,setItem:(k,v)=>raw=v},h=harness(storage);
+ h.run('act("new");editor.name="Comet";act("hair:5");act("pattern:jersey");act("gear:glasses");savePlayer();act("start");while(page==="play"){act("right");act("next");}');
+ h.run('act("edit:"+player().id);act("hair:3");act("reset-avatar");');assert.equal(h.run('editor.avatar.hair'),5);assert.equal(h.run('editor.avatar.style'),'jersey');
+ h.run('act("shuffle-avatar");');assert.ok(h.run('editor.avatar.hair>=0&&editor.avatar.hair<6'));h.run('act("reset-avatar");savePlayer();');
+ const again=harness(storage);assert.equal(again.run('player().avatar.hair'),5);assert.equal(again.run('player().runs.length'),1);assert.equal(again.run('player().avatar.accessory'),'glasses');
+});
+test('bot poses follow feedback and correction shows exact equal groups',()=>{const h=harness({getItem:()=>null,setItem(){}});h.run('act("new");editor.name="Comet";savePlayer();act("start");session=new Session([{a:5,b:5}]);render();');assert.match(h.html(),/bot-sprite idle/);
+ h.run('act("wrong");');assert.match(h.html(),/bot-sprite teach/);assert.equal((h.html().match(/class="power-pack"/g)||[]).length,5);assert.equal((h.html().match(/<i><\/i>/g)||[]).length,25);assert.match(h.html(),/5 \+ 5 \+ 5 \+ 5 \+ 5 = 25/);
+ h.run('act("undo");act("right");');assert.match(h.html(),/bot-sprite cheer/);
+});
 

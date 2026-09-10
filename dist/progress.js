@@ -1,8 +1,8 @@
 export const STORAGE_KEY='star-quest.players.v1';
-export const DEFAULT_AVATAR={hair:0,hairColor:'#54351f',skin:'#e9ad79',eyes:'#497eb8',shirt:'#795bce',style:'plain',accessory:'none'};
+export const DEFAULT_AVATAR={hair:0,hairColor:'#54351f',skin:'#e9ad79',eyes:'#497eb8',shirt:'#795bce',style:'plain',accessory:'none',backdrop:'#243c60'};
 export const WORLDS=[
- {id:'cosmos',name:'Cosmic Circuit',subtitle:'Power up your curiosity',character:'Bolt the Bot',image:'cosmos.png'},
- {id:'skylands',name:'Skyland Scouts',subtitle:'Discover a little more',character:'Skye the Scout',image:'skylands.png'},
+ {id:'cosmos',name:'Cosmic Circuit',subtitle:'Charge up the next discovery',character:'Your bot buddy',image:'circuit-world.png'},
+ {id:'skylands',name:'Skyland Scouts',subtitle:'A new adventure above the clouds',character:'Your bot buddy',image:'sky-world.png'},
 ];
 export function emptySave(){return {version:1,activeId:null,players:[]};}
 export function parseSave(raw){

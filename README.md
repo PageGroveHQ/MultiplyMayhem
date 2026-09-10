@@ -10,7 +10,7 @@ Hold the screen so your child can answer out loud. Swipe right or tap Got it for
 
 ## Players and progress
 
-Create a nickname and customize a bust avatar: three hairstyles, six hair colors, five skin tones, four eye colors, four accessory settings, six shirt colors and three patterns. Two pixel-art worlds are selectable: Cosmic Circuit and Skyland Scouts. Existing profiles can be customized without losing history.
+Create a nickname and customize a bust avatar: six hairstyles, six hair colors, five skin tones, four eye colors, four accessory settings, six shirt colors, four patterns and four backdrops. The portrait studio offers visual hair previews, shuffle and reset. Two pixel-art worlds are selectable: Cosmic Circuit and Skyland Scouts. The reference robot accompanies each flash card, celebrates correct answers, and teaches missed facts using groups of energy tiles and running totals. Existing profiles can be customized without losing history.
 
 Eight achievements reward completed missions, practice, successful retries, stars, and exploration. The Progress page shows per-table coverage and first-try accuracy, individual mission details, and a CSV history export. Practice for me prioritizes the selected tables' latest missed facts, then unseen facts, then previously correct facts.
 
@@ -22,11 +22,17 @@ Saves are browser- and origin-specific. Clearing browser data removes them. Priv
 
 Install Node.js, then run `npm start` and open http://127.0.0.1:4173. Run `npm test` to check deck coverage and explanations. No package install is required.
 
+## Home-screen icon
+
+Open the GitHub Pages game on your phone and use your browser's Add to Home Screen command. The manifest includes 192px and 512px robot icons, a maskable icon, and an Apple touch icon. The manifest launches within the repository path. An older shortcut can retain its cached icon; re-add the shortcut without clearing browser/site data, which contains player saves. This release does not include offline caching.
+
 ## GitHub Pages
 
 Push this folder to the main branch of your repository. In Settings → Pages, select GitHub Actions as the source. The included workflow tests and publishes the dist folder. All paths are relative, so project Pages URLs work. GitHub Pages availability depends on repository visibility and account plan. The Sites preview is a separate private deployment.
 
 ## Extending
 
-Game rules are in dist/engine.js, undo and retry scheduling in dist/session.js, local saves/reports/achievements in dist/progress.js, avatar rendering in dist/avatar.js, interaction in dist/app.js, and styling in dist/style.css. Avatar sheets were generated with ImageGen and use runtime palette replacement and accessory compositing. Exact artwork prompts are in art-prompts.json; the generated meadow asset failed and is not used. To expand past 9, update the factor limit, selectable table controls, reporting validation, and large repeated-addition explanations together. Google Fonts is optional; system fonts work without it.
+Game rules are in dist/engine.js, undo and retry scheduling in dist/session.js, local saves/reports/achievements in dist/progress.js, avatar rendering in dist/avatar.js, interaction in dist/app.js, and styling in dist/style.css and dist/studio.css. Avatar sheets use runtime palette replacement and accessory compositing; recoloring preserves alpha and neutral highlights. The robot reference is the user-supplied bot_sprite_sheet_-fullview.jpg. Artwork was generated with built-in ImageGen; exact new prompts are in art-prompts-v3.json and prior prompts in art-prompts.json. To expand past 9, update the factor limit, selectable table controls, reporting validation, and large repeated-addition explanations together. Google Fonts is optional; system fonts work without it.
+Release 3 cutout backgrounds were cleaned in code with explicit user permission, inspected on dark and light backgrounds, and saved with real PNG alpha. The runtime does not perform background removal.
+
 
